@@ -1,8 +1,13 @@
-import numpy as np
-from new import Univariate
+import pandas as pd
+from new import Multi_Variable
+from new import Uni_Variable
 
-salary = [82,76,24,40,67,62,75,78,71,32,98,89,78,67,72,82,87,66,56,52]
+titanic = pd.read_csv("D:\\Sarita Naik\\Visual Studio Codes\\Statistical Analysis\\ExploratoryAnalysis\\train.csv")
 
-bs = Univariate()
-b = bs.center_spread(salary)
-print(b)
+bs = Multi_Variable()
+vs = Uni_Variable()
+#a = bs.group_func(titanic,'Sex','Fare','median')
+#b = bs.multi_func(titanic,'Sex')
+#bs.graph_func(titanic,'Sex','Embarked')
+a = vs.multi_func(titanic,'Age', 'mean')
+print(a)
